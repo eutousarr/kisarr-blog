@@ -21,9 +21,10 @@ export const defaultValue = {
 export default function ContentForm() {
   const [title, setTitle] = useState('')
   const [slug, setSlug] = useState('')
+  const [authorId, setAuthorId] = useState(1)
   const [content, setContent] = useState<string>('')
   const [pending, setPending] = useState(false)
-  const authorId = 1 // Replace with actual author ID
+   // Replace with actual author ID
 
   useEffect(() => {
     const name = title
