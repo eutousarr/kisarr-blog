@@ -23,6 +23,7 @@ export default function ContentForm() {
   const [slug, setSlug] = useState('')
   const [content, setContent] = useState<string>('')
   const [pending, setPending] = useState(false)
+  const authorId = 1 // Replace with actual author ID
 
   useEffect(() => {
     const name = title
@@ -38,7 +39,7 @@ export default function ContentForm() {
 
     setPending(true)
 
-    const result = await createBlogAction({ title, slug, content })
+    const result = await createBlogAction({ title, slug, content, authorId })
 
     if (result?.error) {
       toast.error(result.error)

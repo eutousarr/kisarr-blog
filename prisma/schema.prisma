@@ -1,9 +1,10 @@
 generator client {
   provider = "prisma-client-js"
 }
+
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
@@ -12,6 +13,35 @@ model Post {
   title     String
   slug      String   @unique
   content   String
+  published Boolean  @default(false)
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Profile {
+  id        Int     @id @default(autoincrement())
+  bio       String? @db.VarChar(255)
+  user      User    @relation(fields: [userId], references: [id])
+  userId    Int     @unique
+  photo     String?
+  sexe      SEXE?   @default(Homme)
+  age       Int?
+  adresse   String? @db.VarChar(255)
+  telephone String?
+}
+
+enum SEXE {
+  Femme
+  Homme
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  prenom  String?
+  nom     String?
+  posts   Post[]
+  profile Profile?
 }

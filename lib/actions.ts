@@ -8,6 +8,7 @@ export async function createBlogAction(data: {
   title: string
   slug: string
   content: string
+  authorId: number
 }) {
   // TODO: validate the data
 
@@ -18,7 +19,8 @@ export async function createBlogAction(data: {
       data: {
         title: data.title,
         slug: data.slug,
-        content: data.content
+        content: data.content,
+        authorId: data.authorId
       }
     })
 
