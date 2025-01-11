@@ -34,3 +34,26 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Recommended for most uses
+DATABASE_URL=postgres://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require
+
+# For uses requiring a connection without pgbouncer
+DATABASE_URL_UNPOOLED=postgresql://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj.us-east-2.aws.neon.tech/neondb?sslmode=require
+
+# Parameters for constructing your own connection string
+PGHOST=ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech
+PGHOST_UNPOOLED=ep-crimson-unit-a5pe1xxj.us-east-2.aws.neon.tech
+PGUSER=neondb_owner
+PGDATABASE=neondb
+PGPASSWORD=gU1bikc2PLaV
+
+# Parameters for Vercel Postgres Templates
+POSTGRES_URL=postgres://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require
+POSTGRES_URL_NON_POOLING=postgres://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj.us-east-2.aws.neon.tech/neondb?sslmode=require
+POSTGRES_USER=neondb_owner
+POSTGRES_HOST=ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech
+POSTGRES_PASSWORD=gU1bikc2PLaV
+POSTGRES_DATABASE=neondb
+POSTGRES_URL_NO_SSL=postgres://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech/neondb
+POSTGRES_PRISMA_URL=postgres://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech/neondb?pgbouncer=true&connect_timeout=15&sslmode=require
