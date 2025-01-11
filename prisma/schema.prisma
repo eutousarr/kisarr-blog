@@ -4,8 +4,8 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("POSTGRES_URL") // uses connection pooling
+  // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model Post {
@@ -42,6 +42,36 @@ model User {
   email   String   @unique
   prenom  String?
   nom     String?
+  invoices          Invoice[] @relation("UserInvoices")
   posts   Post[]
   profile Profile?
 }
+
+
+  
+  model Invoice {
+    id            String        @id
+    name          String
+    issuerName    String        @default("")
+    issuerAddress String        @default("")
+    clientName    String        @default("")
+    clientAddress String        @default("")
+    invoiceDate   String        @default("")
+    dueDate       String        @default("")
+    vatActive     Boolean       @default(false)
+    vatRate       Float         @default(20)
+    status        Int           @default(1)
+    lines         InvoiceLine[] @relation("InvoiceLines")
+    userId        Int
+    createdById   User          @relation("UserInvoices", fields: [userId], references: [id])
+  }
+  
+  model InvoiceLine {
+    id          String   @id @default(uuid())
+    description String   @default("")
+    quantity    Int      @default(0)
+    unitPrice   Float    @default(0)
+    invoiceId   String?
+    invoice     Invoice? @relation("InvoiceLines", fields: [invoiceId], references: [id], onDelete: Cascade)
+  }
+  
