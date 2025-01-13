@@ -57,3 +57,6 @@ POSTGRES_PASSWORD=gU1bikc2PLaV
 POSTGRES_DATABASE=neondb
 POSTGRES_URL_NO_SSL=postgres://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech/neondb
 POSTGRES_PRISMA_URL=postgres://neondb_owner:gU1bikc2PLaV@ep-crimson-unit-a5pe1xxj-pooler.us-east-2.aws.neon.tech/neondb?pgbouncer=true&connect_timeout=15&sslmode=require
+
+
+<h1>Voir et entendre</h1><h3>Exercice 1</h3><ul class="not-prose pl-2 " data-type="taskList"><li class="flex gap-2 items-start my-4" data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Equation</p></div></li><li class="flex gap-2 items-start my-4" data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Inéquation</p></div></li><li class="flex gap-2 items-start my-4" data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Droite</p></div></li></ul><p></p><img class="rounded-lg border border-muted" src="https://39qa0tozdjo3obql.public.blob.vercel-storage.com/AstouDiouf-21iyowHrpVCQh4VtNawbz94FhkoRns.png">

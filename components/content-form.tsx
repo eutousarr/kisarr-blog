@@ -41,7 +41,7 @@ export default function ContentForm() {
     setPending(true)
 
     const result = await createBlogAction({ title, slug, content, authorId })
-
+    
     if (result?.error) {
       toast.error(result.error)
     }
@@ -52,6 +52,10 @@ export default function ContentForm() {
   return (
     <div className='mt-6 flex max-w-2xl flex-col gap-4'>
       <div className='flex gap-4'>
+        <Input
+          type='hidden'
+          value={1}
+        />
         <Input
           type='text'
           placeholder='Title'

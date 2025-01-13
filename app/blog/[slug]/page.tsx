@@ -1,9 +1,10 @@
 import prisma from '@/lib/prisma'
 
 export default async function Blog({ params }: { params: { slug: string } }) {
+  const { slug } = await params
   const blog = await prisma.post.findUnique({
     where: {
-      slug: params.slug
+      slug: slug
     }
   })
 
